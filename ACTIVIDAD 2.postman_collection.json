@@ -1,0 +1,450 @@
+{
+	"info": {
+		"_postman_id": "a1a83a60-26e7-4a14-9df4-572f722898d1",
+		"name": "ACTIVIDAD 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23204180"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8000/api/posts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Test Post\",\n  \"text\": \"This is a test post.\",\n  \"author\": \"John Doe\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts"
+					]
+				},
+				"description": "- Recibe body JSON con los campos title, text y author.\n- Devuelve HTTP 201 con el detalle JSON del Post creado en la Base de Datos en memoria\n- Devuelve HTTP 400 si hay errores en la validación del body de la petición contra el esquema definido"
+			},
+			"response": [
+				{
+					"name": "http://localhost:8000/api/posts",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Test Post\",\n  \"text\": \"This is a test post.\",\n  \"author\": \"John Doe\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "190"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"be-YPpJWav0Y+6NbtAyi8CXOeSbOoM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 Oct 2023 20:01:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"Test Post\",\n    \"text\": \"This is a test post.\",\n    \"author\": \"John Doe\",\n    \"_id\": \"6521b924b1fb6c1f1f9ddbb8\",\n    \"createdAt\": \"2023-10-07T20:01:40.477Z\",\n    \"updatedAt\": \"2023-10-07T20:01:40.479Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8000/api/posts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts"
+					]
+				},
+				"description": "- Devuelve HTTP 200 OK con el listado JSON de posts almacenados en la Base de Datos en memoria"
+			},
+			"response": [
+				{
+					"name": "http://localhost:8000/api/posts",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "192"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c0-J6gNsykDC7U/2WKD8ZxDB49jyzA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 Oct 2023 20:03:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"6521b924b1fb6c1f1f9ddbb8\",\n        \"title\": \"Test Post\",\n        \"text\": \"This is a test post.\",\n        \"author\": \"John Doe\",\n        \"createdAt\": \"2023-10-07T20:01:40.477Z\",\n        \"updatedAt\": \"2023-10-07T20:01:40.479Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8000/api/posts/6521b924b1fb6c1f1f9ddbb8",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/posts/652bb833cb6ff048bb06e3fc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts",
+						"652bb833cb6ff048bb06e3fc"
+					]
+				},
+				"description": "- Devuelve 200 OK con detalle de un Post JSON almacenado en la Base de Datos en memoria\n- Devuelve 404 si el post no existe en la Base de Datos en memoria"
+			},
+			"response": [
+				{
+					"name": "http://localhost:8000/api/posts/6521b924b1fb6c1f1f9ddbb8",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/posts/6521b924b1fb6c1f1f9ddbb8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts",
+								"6521b924b1fb6c1f1f9ddbb8"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "190"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"be-IK8mwytJXfmCWsmwB1H0FZSesK0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 Oct 2023 20:05:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6521b924b1fb6c1f1f9ddbb8\",\n    \"title\": \"Test Post\",\n    \"text\": \"This is a test post.\",\n    \"author\": \"John Doe\",\n    \"createdAt\": \"2023-10-07T20:01:40.477Z\",\n    \"updatedAt\": \"2023-10-07T20:01:40.479Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8000/api/posts/6521bb08b1fb6c1f1f9ddbbe",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Updated Title\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/posts/652bb833cb6ff048bb06e3fc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts",
+						"652bb833cb6ff048bb06e3fc"
+					]
+				},
+				"description": "- Recibe body JSON con alguno de los campos title, text y author.\n- Devuelve 200 OK con detalle de un Post JSON almacenado en la Base de Datos en memoria tras modificar sus atributos con lo indicado en el body\n- Devuelve 404 si el post no existe en la Base de Datos en memoria"
+			},
+			"response": [
+				{
+					"name": "http://localhost:8000/api/posts/6521bb08b1fb6c1f1f9ddbbe",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Updated Title\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/posts/6521bb08b1fb6c1f1f9ddbbe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts",
+								"6521bb08b1fb6c1f1f9ddbbe"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "194"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c2-j84AC76Pqc2Q6uiEA9YCogeCocA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 Oct 2023 20:15:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6521bb08b1fb6c1f1f9ddbbe\",\n    \"title\": \"Updated Title\",\n    \"text\": \"This is a test post.\",\n    \"author\": \"John Doe\",\n    \"createdAt\": \"2023-10-07T20:09:44.225Z\",\n    \"updatedAt\": \"2023-10-07T20:15:17.818Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8000/api/posts/6521b924b1fb6c1f1f9ddbb8",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/posts/652bb833cb6ff048bb06e3fc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts",
+						"652bb833cb6ff048bb06e3fc"
+					]
+				},
+				"description": "- Devuelve HTTP 204 tras eliminar el post id == <id> de la Base de Datos en memoria\n- Devuelve 404 si el post no existe en la Base de Datos en memoria"
+			},
+			"response": [
+				{
+					"name": "http://localhost:8000/api/posts/6521b924b1fb6c1f1f9ddbb8",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/posts/6521b924b1fb6c1f1f9ddbb8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts",
+								"6521b924b1fb6c1f1f9ddbb8"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 Oct 2023 20:09:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	]
+}
